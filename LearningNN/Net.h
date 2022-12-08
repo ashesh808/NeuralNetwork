@@ -6,12 +6,17 @@
 /** @file Net.h */
 #ifndef _NET
 #define _NET
+#include <vector>
+#include "Neuron.h"
+
+typedef vector<Neuron> Layer;
+using namespace std;
 
 class Net
 {
 private:
-    int neurons;
-    int layers;
+    vector<Layer> m_layers;
+    //m_layers[layerNums][neuronNums]
 
 public:
     /** Default constructor.
@@ -28,7 +33,7 @@ public:
       @param personBirthday  The birthday of people object.
       @return  none.
     **/
-    Net(int layers, int neurons);
+    Net(const vector<unsigned> &topology);
 
     // Methods for training the Neural Network
 
@@ -39,7 +44,7 @@ public:
      @param personBirthday  The birthday of people object.
      @return  none.
    **/
-    void feedForward(int inputVals);
+    void feedForward(const vector<double> &inputVals);
 
     /** Parameterized constructor.
      @pre  None.
@@ -48,7 +53,7 @@ public:
      @param personBirthday  The birthday of people object.
      @return  none.
    **/
-    void backProp(int targetVals);
+    void backProp(const vector<double> &targetVals);
 
     // Results
     /** Parameterized constructor.
@@ -58,7 +63,7 @@ public:
      @param personBirthday  The birthday of people object.
      @return  none.
    **/
-    void getResults(int resultVals);
+    void getResults(vector<double> &resultVals) const;
 };
 
 #include "Net.cpp"
