@@ -12,13 +12,15 @@ Net::Net()
 Net::Net(const vector<unsigned> &topology)
 {
     unsigned numLayers = topology.size();
-    for (unsigned layerNum = 0; i < numLayers; ++layerNum)
+    for (unsigned layerNum = 0; layerNum < numLayers; ++layerNum)
     {
-        m_layers.push_back(layer());
+        m_layers.push_back(Layer());
+        unsigned numOutputs = 0;
         // Filling the new layer with ith Neurons and adding a bias Neuron to the layer
         for (unsigned neuronNum = 0; neuronNum <= topology[layerNum]; ++neuronNum)
         {
-            m_layers.back().push_back(Neuron());
+            m_layers.back().push_back(Neuron(numOutputs));
+            cout << "Added a new neuron! \n";
         }
     }
 }

@@ -6,11 +6,13 @@
 /** @file Net.h */
 #ifndef _NET
 #define _NET
+#include <iostream>
 #include <vector>
 #include "Neuron.h"
+using namespace std;
+
 
 typedef vector<Neuron> Layer;
-using namespace std;
 
 class Net
 {
