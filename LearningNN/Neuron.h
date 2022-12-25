@@ -1,9 +1,9 @@
 /*
- * Description: The header file for Net class
+ * Description: The header file for Neuron class
  * Author: Ashesh Nepal
  */
 
-/** @file Net.h */
+/** @file Neuron.h */
 #ifndef _NEURON
 #define _NEURON
 
